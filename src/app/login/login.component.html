@@ -1,0 +1,26 @@
+
+<div class="main pt-5">
+<div id="login">
+  <div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+      <div id="login-column" class="col-md-6">
+        <div id="login-box" class="col-md-12">
+          <form id="login-form" class="form" action="" method="post">
+            <h3 class="text-center text-danger">Login</h3>
+            <p class="text-center opacity-25">Enter your username and password</p>
+            <div class="form-outline form-white mb-4" [ngClass]="{'error': loginError}">
+              <input [(ngModel)]="username" name="username" type="text" placeholder="Username" class="form-control form-control-lg" style="border: 2px gray solid" />
+            </div>
+            <div class="form-outline form-white mb-4" [ngClass]="{'error': loginError}">
+              <input [(ngModel)]="password" name="password"  type="password" placeholder="Password" class="form-control form-control-lg" style="border: 2px gray solid" />
+            </div>
+            <div class="form-group mt-3 text-center">
+              <button class="btn bg-danger btn-outline-light btn-lg px-5" type="submit" (click)="login()">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

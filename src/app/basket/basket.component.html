@@ -1,0 +1,38 @@
+<ng-container *ngIf="item.length != 0">
+  <div class="container-fluid pt-5" *ngFor="let product of item">
+    <div class="container col-9 d-flex flex-wrap mb-3">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <img [src]="product.image" alt="" style="height: 200px;max-width: 230px">
+      </div>
+      <div class="col-lg-9 col-md-6 col-sm-12">
+        <strong>{{product.title}}</strong>
+        <p>{{product.description}}}</p>
+        <p><strong>Рейтинг: </strong> {{product.rating.rate}}</p>
+        <p><strong>Ціна: </strong>${{product.price}}</p> <button class="btn btn-danger" (click)="removeItem(product)"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+    </div>
+
+  </div>
+  <div class="container col-12">
+    <div class="text-end m-5">
+      <button class="btn btn-danger" (click)="emptycart()">Empty?</button>
+      Total: ${{grandTotal}}</div>
+  </div>
+
+
+</ng-container>
+
+<ng-container *ngIf="item.length == 0">
+  <div class="container col-9">
+    <div class="card d-flex justify-content-center">
+      <div class="text-center col-12">
+        <img src="assets/images/empty.png" alt="" style="height: 100px;">
+        <h4>Your cart is empty</h4>
+        <h5>Shop now</h5>
+        <button class="btn btn-danger" routerLink="/products">Show products</button>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+
