@@ -1,1 +1,35 @@
-<p>products works!</p>
+
+<div class="container-fluid col-12 d-flex pt-5 justify-content-around">
+  <button routerLink="/basket" type="button" class="btn btn-danger text-end">
+    <i class="fa-solid fa-cart-shopping" style="color:white;" data-bs-toggle="modal" data-bs-target="#cart"></i>
+     <span class="badge text-bg-secondary ms-3 bg-light text-danger" style="height: 20px">{{totalNumber}}</span>
+  </button>
+</div>
+
+
+
+<div class="container-fluid d-flex flex-wrap justify-content-around">
+  <div class="row" style="width: 100%">
+    <div class="col-12 col-lg-4 col-md-6 col-sm-12 p-2 pt-5 pb-5 d-flex flex-column align-items-center justify-content-center" *ngFor="let product of products">
+      <div class="prod block border" style="height: 550px; width: 100%; max-width: 300px">
+        <div class="text-center">
+          <img [src]="product.image" alt="" style="height: 300px;max-width: 100%">
+        </div>
+        <div class="name-text text-center">
+          <h6>{{product.title}}</h6>
+
+        </div>
+        <div>
+          <h6 style="text-decoration: underline">Категорія: {{product.category}}</h6>
+        </div>
+        <strong>Ціна:</strong> ${{product.price}}<br>
+        <strong>Рейтинг:</strong> {{product.rating.rate}}
+        <div class="text-center"><button class="button btn btn-danger" (click)="addToCart(product)">Buy</button></div>
+
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
